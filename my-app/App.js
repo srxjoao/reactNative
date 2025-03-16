@@ -1,25 +1,23 @@
-import React, {Component} from 'react';
-import {View,Text,StyleSheet} from 'react-native';
-
-class Saudacao extends Component {
-  render(){
-    return(
-      <View style={styles.container}>
-        <Text style={styles.text}>Hello, {this.props.name}</Text>
-      </View>
-    );
-  }
+import React from "react";
+ import { View, Text } from "react-native";
+function Caixa ({children}){
+  return(
+    <View style={{padding:10, borderWidth: 1, borderColor:'blue'}} >
+      {children}
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    backgroundColor:'f0f0f0',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-  },
-});
+// Utilizando o componente Caixa
 
-export default Saudacao;
+function App(){
+ return(
+  <Caixa>
+  <Text>
+    Esse e um conteúdo da caixa.
+  </Text>
+</Caixa>
+ );
+}
+
+export default App;
